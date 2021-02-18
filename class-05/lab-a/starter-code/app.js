@@ -51,12 +51,18 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+function sumAndMultiply(param1, param2, param3) { //eslint-disable-line
+    let leftSideSum = sum(param1, param2)[0];
+    let allOverSum = sum(leftSideSum, param3)[0];
+    let leftSideMulti = multiply(param1, param2)[0];
+    let allOvermulti = multiply(leftSideMulti, param3)[0];
+    let summationMessage = `${param1} and ${param2} and ${param3} sum to ${allOverSum}.`;
+    let multiplicationMessage = `The product of ${param1} and ${param2} and ${param3} is ${allOvermulti}.`;
+    return [allOverSum, allOvermulti, summationMessage, multiplicationMessage];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
